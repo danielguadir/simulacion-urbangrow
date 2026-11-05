@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
+    "postbuild": "node -e \"if(process.env.VERCEL)require('fs').cpSync('out','public',{recursive:true})\"",
     "start": "next start -p 3000",
     "typecheck": "tsc --noEmit"
   },
